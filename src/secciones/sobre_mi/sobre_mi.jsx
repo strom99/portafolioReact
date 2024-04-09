@@ -1,0 +1,107 @@
+import './sobre_mi.css'
+import foto from '../../assets/foto.jpg';
+import curriculum from '../../assets/pdf/cv_alison_dev.pdf';
+import documental from '../../assets/documental.png'
+import cine from '../../assets/cine.png'
+import microfono from '../../assets/microfono.png'
+import lluviaDeIdeas from '../../assets/lluvia-de-ideas.png'
+import adaptable from '../../assets/adaptable.png'
+import apoyar from '../../assets/apoyar.png'
+
+function Listado({ titulo, lista }) {
+    console.log(lista)
+    return (
+        <div>
+            <h2 className="text-[#276E90] font-bold">{titulo}</h2>
+            <ul className="flex gap-2 flex-col mt-4">
+                {
+                    lista.map((item, index) => {
+                        return (
+                            <li key={index} className="flex items-center gap-2">
+                            <div className="w-8">
+                                <img src={item.img} alt="" />
+                            </div>
+                            <span>{item.texto}</span>
+                        </li>
+                        )
+                    })
+                }
+            </ul>
+        </div>
+    )
+}
+
+export default function Sobremi() {
+
+    const aficciones = [
+        {
+            img : documental,
+            texto: 'Documentalista aficionada'
+        },
+        {
+            img: cine,
+            texto: 'Cinéfila'
+        },
+        {
+            img: microfono,
+            texto: 'Cantar'
+        }
+    ];
+    const habilidades = [
+        {
+            img: lluviaDeIdeas,
+            texto: 'Creatividad'
+        },
+        {
+            img: adaptable,
+            texto: 'Adaptabilidad'
+        },
+        {
+            img: apoyar,
+            texto: 'Trabajo en equipo'
+        }
+    ];
+
+    return <>
+        <div className="px-4 py-4 sm:px-16 sm:py-16" id="sobremi">
+            <section className="about-me flex w-full gap-14 justify-center">
+                <div className="w-96 sm:pr-10 text-center" data-aos="fade-right">
+                    <h1 className="text-[#0A3143] text-4xl font-bold pb-6">Sobre mi</h1>
+                    <div className="w-[300px] sm:w-[350px]">
+                        <img src={foto} alt="" />
+                    </div>
+                </div>
+                <div className="flex justify-start flex-col items-end max-w-2xl">
+                    <a
+                        href={curriculum}
+                        target="_blank"
+                        className="btn-general w-min mb-6"
+                    >Curriculum</a>
+                    <p className="mb-3">
+                        Hola soy Laura Alison Choque Copajira, resido en Terrassa - Barcelona ,
+                        He terminado mis estudios en Desarrollo de aplicaciones Web, que es un
+                        grado superior con duración de dos años. Inicie en el mundo de la
+                        programación por recomendación de un amigo, y con mis inicios al
+                        aprender HTML y CSS me bastaron para animarme a hacer un Grado. Aun asi
+                        continuo formándome en plataformas de cursos , para mantenerme
+                        actualizada.
+                    </p>
+                    <p>
+                        Me gustaría poder llegar a abarcar mucho en cuanto a programación, tanto
+                        en Backend como Frontend , y en un futuro sobre inteligencia artificial
+                        o realidad virtual. Me siento motivada por seguir aprendiendo distintos
+                        lenguajes de programación y consolidar más mis conocimientos en una
+                        empresa, poner a prueba y ampliar mis conocimientos para ser parte de un
+                        gran equipo profesional.
+                    </p>
+                </div>
+            </section>
+            <section
+                className="hobbies flex-wrap gap-2 sm:gap-0 sm:flex-nowrap flex justify-between md:justify-evenly mt-14"
+            >
+                <Listado titulo="Habilidades Personales" lista={habilidades} />
+                <Listado titulo="Aficciones" lista={aficciones} />
+            </section>
+        </div>
+    </>
+}

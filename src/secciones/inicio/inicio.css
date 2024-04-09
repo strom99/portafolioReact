@@ -1,0 +1,13 @@
+.portada{
+    mask-image: linear-gradient(white 98%,transparent);
+}
+
+@media screen and (max-width: 992px) {
+    #inicio {
+      flex-wrap: wrap;
+    }
+    .imgbox {
+      margin-bottom: 30px;
+    }
+  }
+  

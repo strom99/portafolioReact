@@ -1,0 +1,11 @@
+nav a{
+    font-weight: 800;
+}
+
+nav a:hover{
+    filter: drop-shadow(0 3px 4px rgba(141, 141, 141,1));
+}
+
+.navegador a:hover{
+    
+}

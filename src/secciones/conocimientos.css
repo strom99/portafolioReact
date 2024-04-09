@@ -1,0 +1,40 @@
+li{
+    --i: 0;
+}
+
+
+.menu li,
+.menu2 li,
+.menu3 li {
+  @apply absolute w-[70px] list-none origin-[155px] sm:origin-[180px] left-[10px] sm:left-0 transition duration-700;
+  transition-delay: calc(0.1s * var(--i));
+  transform: rotate(0deg) translateX(150px);
+}
+
+.menu .toggle:hover,
+.menu2 .toggle:hover,
+.menu3 .toggle:hover {
+  filter: drop-shadow(2px 4px 6px rgb(158, 158, 158));
+}
+
+/* .menu.active li, .menu2.active li, .menu3.active li{
+    transform: rotate(calc(360deg / 5 * var(--i)));
+} */
+
+.animacion {
+  transform: rotate(calc(360deg / 5 * var(--i))) !important;
+}
+
+.menu li a,
+.menu2 li a,
+.menu3 li a {
+  display: flex;
+  transform: rotate(calc(360deg / -5 * var(--i)));
+}
+
+.icono.active .toggle,
+.icono2.active .toggle,
+.icono3.active .toggle {
+  transform: rotate(315deg);
+  transition: transform 1.25s;
+}

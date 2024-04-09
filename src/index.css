@@ -1,0 +1,13 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+p,a,span{
+  font-size: 18px;
+}
+
+body{
+  font-family: 'Noto Sans', sans-serif;
+}
+
