@@ -6,7 +6,6 @@ import { useState } from 'react';
 
 
 function Navegador(e) {
-    console.log(e)
     return (
         <nav className={`navegador md:border-0  border-l-2 border-b-2 border-[#dddddd] transition-all duration-75 flex gap-6 bg-white z-10 p-5 flex-col text-end top-[68px] absolute md:relative md:flex-row md:text-center md:right-0 md:top-0 ${e.inter ? 'right-[-20px]' : 'right-[-200px]'}`}>
             <a href="">Inicio</a>

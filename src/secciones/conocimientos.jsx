@@ -1,53 +1,71 @@
 
 import { useState } from 'react'
 import './conocimientos.css'
+import mas from '../assets/mas.png'
+import menos from '../assets/menos.png'
+import html from '../assets/html.png'
+import css from '../assets/css.png'
+import tailwind from '../assets/tailwind.png'
+import js from '../assets/js.png'
+import angular from '../assets/angular.png'
+import java from '../assets/java.png'
+import php from '../assets/php.png'
+import mysql from '../assets/mysql.png'
+import symfony from '../assets/symfony.png'
+import laravel from '../assets/laravel.png'
+import visual from '../assets/visual.png'
+import intellij from '../assets/intellij.png'
+import git from '../assets/git.png'
+import linux from '../assets/linux.png'
+import figma from '../assets/figma.png'
 
-function Esferas(){
-    const [abierto,setAbierto] = useState(false);
-    console.log(abierto)
+function Esferas({name, imagenes }) {
+    const [abierto, setAbierto] = useState(true);
+
+    function handleClick(e) {
+        const menu = e.target.closest('.menu')
+        setAbierto(!abierto)
+
+        const lis = menu.querySelectorAll('li');
+        lis.forEach(li => {
+            li.classList.toggle('animacion');
+        });
+    };
+
     return (
         <div
-        className="menu cursor-pointer relative w-[350px] h-[350px] flex justify-center items-center"
-    >
-        <div
-            onClick={() => setAbierto(!abierto)}
-            className="toggle w-[130px] h-[130px] bg-white flex flex-col justify-center items-center z-10 rounded-full shadow-md shadow-slate-500"
+            className="menu cursor-pointer relative w-[350px] h-[350px] flex justify-center items-center "
         >
-            <div className="w-10 icono">
-                <img src="../../../assets/img/mas.png" alt="" />
+            <div
+                onClick={handleClick}
+                className="toggle w-[130px] h-[130px] bg-white flex flex-col justify-center items-center z-10 rounded-full shadow-md shadow-slate-500"
+            >
+                <div className={`w-10 icono ${abierto ? 'active' : ''}`}>
+                    <img className='w-[50px] h-[40px] object-contain tran' src={abierto ? mas : menos} alt="" />
+                </div>
+                <h3 className="">{name}</h3>
             </div>
-            <h3 className="">Frontend</h3>
+            <ul className='flex items-center'>
+                {
+                    imagenes.map((e, index) => {
+                        return <li key={index} style={{ "--i": index }}>
+                            <a href="">
+                                <img src={e} alt="" />
+                            </a>
+                        </li>
+                    })
+                }
+            </ul>
         </div>
-        <li style={{"--i": 0}}>
-            <a href="">
-                <img src="../../../assets/img/html.png" alt="" />
-            </a>
-        </li>
-        <li style={{'--i': 1}}>
-            <a href="">
-                <img src="../../../assets/img/css.png" alt="" />
-            </a>
-        </li>
-        <li style={{'--i': 2}}>
-            <a href=""  >
-                <img src="../../../assets/img/tailwind.png" alt="" />
-            </a>
-        </li>
-        <li style={{'--i': 3}}>
-            <a href="">
-                <img src="../../../assets/img/js.png" alt="" />
-            </a>
-        </li>
-        <li style={{'--i': 4}}>
-            <a href="">
-                <img src="../../../assets/img/angular.png" alt="" />
-            </a>
-        </li>
-    </div>
     )
 }
+
 export default function Conocimientos() {
     return (
+        <div
+            className="flex items-center pt-[100px] px-5 sm:px-8 lg:pt-0  pt-8 min-h-[90vh] gap-12 justify-between lg:container m-auto"
+            id="inicio"
+        >
             <div className="flex w-full px-2 md:px-14 flex-col py-6" id="conocimientos">
                 <div className="mb-10">
                     <h1 className="text-4xl font-black text-[#0A3143]">Conocimientos</h1>
@@ -55,82 +73,11 @@ export default function Conocimientos() {
                     >
                 </div>
                 <div className="flex justify-evenly mt-5 mb-16 flex-wrap">
-                    <Esferas/>
-                    {/* <div
-                        className="cursor-pointer menu2 relative w-[350px] h-[350px] flex justify-center items-center"
-                    >
-                        <div
-                            className="toggle w-[130px] h-[130px] bg-white flex flex-col justify-center items-center z-10 rounded-full shadow-md shadow-slate-500"
-                        >
-                            <div className="w-10 icono2">
-                                <img src="../../../assets/img/mas.png" alt="" />
-                            </div>
-                            <h3 className="">Backend</h3>
-                        </div>
-                        <li style="--i: 0">
-                            <a href="">
-                                <img src="../../../assets/img/java.png" alt="" />
-                            </a>
-                        </li>
-                        <li style="--i: 1">
-                            <a href="">
-                                <img src="../../../assets/img/php.png" alt="" />
-                            </a>
-                        </li>
-                        <li style="--i: 2">
-                            <a href="">
-                                <img src="../../../assets/img/mysql.png" alt="" />
-                            </a>
-                        </li>
-                        <li style="--i: 3">
-                            <a href="">
-                                <img src="../../../assets/img/symfony.png" alt="" />
-                            </a>
-                        </li>
-                        <li style="--i: 4">
-                            <a href="">
-                                <img src="../../../assets/img/laravel.png" alt="" />
-                            </a>
-                        </li>
-                    </div>
-                    <div
-                        className="cursor-pointer menu3 relative w-[350px] h-[350px] flex justify-center items-center"
-                    >
-                        <div
-                            className="toggle w-[130px] h-[130px] bg-white flex flex-col justify-center items-center z-10 rounded-full shadow-md shadow-slate-500"
-                        >
-                            <div className="w-10 icono3">
-                                <img src="../../../assets/img/mas.png" alt="" />
-                            </div>
-                            <h3 className="">Herramientas</h3>
-                        </div>
-                        <li style="--i: 0">
-                            <a href="">
-                                <img src="../../../assets/img/git.png" alt="" />
-                            </a>
-                        </li>
-                        <li style="--i: 1">
-                            <a href="">
-                                <img src="../../../assets/img/visual.png" alt="" />
-                            </a>
-                        </li>
-                        <li style="--i: 2">
-                            <a href="">
-                                <img src="../../../assets/img/intellij.png" alt="" />
-                            </a>
-                        </li>
-                        <li style="--i: 3">
-                            <a href="">
-                                <img src="../../../assets/img/linux.png" alt="" />
-                            </a>
-                        </li>
-                        <li style="--i: 4">
-                            <a href="">
-                                <img src="../../../assets/img/figma.png" alt="" />
-                            </a>
-                        </li>
-                    </div > */}
+                    <Esferas name="Frontend" imagenes={[html, css, tailwind, js, angular]} />
+                    <Esferas name="Backend" imagenes={[java, php, mysql, symfony, laravel]} />
+                    <Esferas name="Herramientas" imagenes={[git, visual, intellij, linux, figma]} />
                 </div >
             </div >
+        </div>
     )
 }

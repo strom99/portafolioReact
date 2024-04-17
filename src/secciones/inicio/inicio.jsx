@@ -87,7 +87,7 @@ export default function Inicio() {
     </div>
     <div
       className="div-tools    bg-[#0A3143] px-7 py-12 ">
-      <div className='lg:container m-auto flex justify-center flex-wrap sm:flex-nowrap gap-10'>
+      <div className='lg:container m-auto flex justify-evenly flex-wrap sm:flex-nowrap gap-10'>
       <Banner imagen={code} tecnologías={['HTML5','CSS3','PHP - MySQL']} texto={'PROGRAMACION , EN...'} />
       <Banner imagen={llave} tecnologías={['CSS','BOOSTRAP','TAILWIND']} texto={'TEGNOLOGIAS , COMPLEMENTARIAS...'} />
       </div>

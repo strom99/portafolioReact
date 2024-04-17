@@ -9,7 +9,6 @@ import adaptable from '../../assets/adaptable.png'
 import apoyar from '../../assets/apoyar.png'
 
 function Listado({ titulo, lista }) {
-    console.log(lista)
     return (
         <div>
             <h2 className="text-[#276E90] font-bold">{titulo}</h2>
