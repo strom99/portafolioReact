@@ -7,30 +7,41 @@ import { useState } from 'react'
 import { atRule } from 'postcss'
 
 
-function Presentacion() {
-    return <div
-    className="fixed bg-slate-100 w-full h-full z-[200] top-0 text-center overflow-auto"
+function Presentacion({datos,estado}) {
+    const [estadoAc,setEstadoAc] = useState(estado);
+
+    function abierto(){
+        setEstadoAc(!estado)
+    }
+
+    return   datos ? 
+                        <div
+    className="fixed bg-slate-100 w-full h-full z-[200] top-0 text-center overflow-auto right-0"
 >
     <header className="bg-gray-600 h-14 flex justify-end items-center pr-7">
-        <button className="text-cyan-50 text-2xl font-bold" >
+        <button onClick={abierto} className="text-cyan-50 text-2xl font-bold" >
             x
         </button>
     </header>
     <div className="">
         <h2 className="text-4xl font-black text-[#0A3143] m-6">
+            {datos.titulo}
         </h2>
         <div className="w-11/12 m-auto mt-3 mb-3">
-            <img src="../../../assets/img/{{ pro.img }}.png" alt="" />
+            <img src={datos.img} alt="" />
         </div>
         <div className="w-11/12 block m-auto mt-5 mb-5">
             <h4 className="text-lg text-start font-bold text-[#276E90] mt-1">Caracteristicas</h4 >
             <p>
-
+                {datos.descripcion}
             </p>
-            <span></span>
+            <span>
+                {datos.ano}
+            </span>
         </div>
     </div>
 </div>
+ : ''
 
 }
 
@@ -38,7 +49,7 @@ function CartaImg({value}){
     const [adentro,setAdentro] = useState(false);
 
     return (<>
-                <img onMouseEnter={()=> setAdentro(!adentro)} className={adentro ? 'hov' : ''} src={value.img} alt="" />
+                <img onMouseLeave={()=> setAdentro(!adentro)} className={adentro ? 'hov' : ''} src={value.img} alt="" />
                 <div
                     className={'description absolute max-w-xs text-center z-20  font-bold '  + (adentro ? 'opacity-1' : 'opacity-0')}
                 >
@@ -54,17 +65,29 @@ function CartaImg({value}){
 
 
 function Tartejas({proyectos}){
+    const [estadoPresentacion,setEstadoPresentacion] = useState(false)
+    const [showPresentacion,setShowPresentacion] = useState(null)
+    function seleccionado(index,datos){
+       setShowPresentacion(datos)
+    }
+
     return <>
         {
             proyectos.map((e,index) =>{
-                return <button key={index}
+                return <button key={index} onClick={()=> seleccionado(index,e)}
 
                 className="proyecto w-96 h-60 flex justify-center items-center cursor-pointer"
             >
                 <CartaImg value={e} />
             </button>
             })
+
         }
+        {
+            // estadoPresentacion ? <Presentacion datos={showPresentacion} estado={estadoPresentacion} /> :''
+            <Presentacion datos={showPresentacion}/>
+        }
+        
     </>
 }
 
