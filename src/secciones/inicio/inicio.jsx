@@ -57,16 +57,16 @@ let socialLinks = social.map(function (data) {
 export default function Inicio() {
   return (<>
     <div
-      className="flex items-center pt-[100px] px-5 sm:px-8 lg:pt-0  pt-8 min-h-[90vh] gap-12 justify-between lg:container m-auto"
+      className="flex items-center pt-[130px] px-5 sm:px-8 lg:pt-0  pt-8 min-h-[100vh] gap-10 justify-between lg:container m-auto"
       id="inicio"
     >
       <section data-aos="fade-right" className="content w-full lg:w-2/4">
         <div className="presentation">
-          <h1 className="name text-4xl font-black text-[#0A3143]">
+          <h1 className="name tracking-wider lg:text-[5rem] text-[30px] sm:mb-6 mb-2 w-max font-black relative z-40">
             Laura Alison <br />
             Choque Copajira
           </h1>
-          <span className="flex text-2xl font-bold text-[#276E90] mt-1"> Programadora Frontend</span>
+          <span className="flex sm:text-2xl text-1xl font-bold text-[#085072c4] mt-1"> Programadora Frontend</span>
           <p className="my-4">
             ¡Hola! Soy Laura, una programadora junior apasionado por la tecnología y
             el desarrollo de software. En este portafolio, podrás encontrar algunos
@@ -86,7 +86,7 @@ export default function Inicio() {
       </section>
     </div>
     <div
-      className="div-tools    bg-[#0A3143] px-7 py-12 ">
+      className="div-tools    bg-[#05364d] px-7 py-12 ">
       <div className='lg:container m-auto flex justify-evenly flex-wrap sm:flex-nowrap gap-10'>
       <Banner imagen={code} tecnologías={['HTML5','CSS3','PHP - MySQL']} texto={'PROGRAMACION , EN...'} />
       <Banner imagen={llave} tecnologías={['CSS','BOOSTRAP','TAILWIND']} texto={'TEGNOLOGIAS , COMPLEMENTARIAS...'} />

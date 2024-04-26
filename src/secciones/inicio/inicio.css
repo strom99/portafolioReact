@@ -2,6 +2,13 @@
     mask-image: linear-gradient(white 98%,transparent);
 }
 
+.name{
+  @apply lg:leading-[85px] leading-[35px] md:leading-[50px];
+  font-family: "DM Serif Text", serif;
+  color: #001125;
+  filter: drop-shadow(2px 4px 6px #264e79ad);
+}
+
 @media screen and (max-width: 992px) {
     #inicio {
       flex-wrap: wrap;

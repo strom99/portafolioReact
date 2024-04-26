@@ -24,7 +24,11 @@ function Esferas({name, imagenes }) {
 
     function handleClick(e) {
         const menu = e.target.closest('.menu')
-        setAbierto(!abierto)
+        
+        setTimeout(() => {
+            setAbierto(!abierto);
+        }, 200);
+        // setAbierto(!abierto)
 
         const lis = menu.querySelectorAll('li');
         lis.forEach(li => {
@@ -63,13 +67,13 @@ function Esferas({name, imagenes }) {
 export default function Conocimientos() {
     return (
         <div
-            className="flex items-center pt-[100px] px-5 sm:px-8 lg:pt-0  pt-8 min-h-[90vh] gap-12 justify-between lg:container m-auto"
-            id="inicio"
+            className="flex items-center sm:pt-[100px] px-5 sm:px-8  pt-[100px] min-h-[90vh] gap-12 justify-between lg:container m-auto"
+            id="conocimientos"
         >
-            <div className="flex w-full px-2 md:px-14 flex-col py-6" id="conocimientos">
+            <div className="flex w-full px-2 md:px-14 flex-col py-6" id="">
                 <div className="mb-10">
                     <h1 className="text-4xl font-black text-[#0A3143]">Conocimientos</h1>
-                    <span className="text-lg font-bold text-[#276E90] mt-1">Mis habilidades en...</span
+                    <span className="text-lg font-bold text-[#085072c4] mt-1">Mis habilidades en...</span
                     >
                 </div>
                 <div className="flex justify-evenly mt-5 mb-16 flex-wrap">

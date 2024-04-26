@@ -1,5 +1,5 @@
 import './sobre_mi.css'
-import foto from '../../assets/foto.jpg';
+import foto from '../../assets/foto.png';
 import curriculum from '../../assets/pdf/cv_alison_dev.pdf';
 import documental from '../../assets/documental.png'
 import cine from '../../assets/cine.png'
@@ -10,14 +10,14 @@ import apoyar from '../../assets/apoyar.png'
 
 function Listado({ titulo, lista }) {
     return (
-        <div>
-            <h2 className="text-[#276E90] font-bold">{titulo}</h2>
-            <ul className="flex gap-2 flex-col mt-4">
+        <div >
+            <h2 className="text-[#276E90] font-bold text-[20px]">{titulo}</h2>
+            <ul className="flex gap-2 flex-col mt-6">
                 {
                     lista.map((item, index) => {
                         return (
-                            <li key={index} className="flex items-center gap-2">
-                            <div className="w-8">
+                            <li key={index} className="flex items-center gap-3">
+                            <div className="w-9">
                                 <img src={item.img} alt="" />
                             </div>
                             <span>{item.texto}</span>
@@ -62,7 +62,7 @@ export default function Sobremi() {
     ];
 
     return <>
-        <div className="px-4 py-4 sm:px-16 sm:py-16" id="sobremi">
+        <div className="px-4 py-4 sm:px-16 sm:py-16 sm:pt-[130px] pt-[130px]" id="sobremi">
             <section className="about-me flex w-full gap-14 justify-center">
                 <div className="w-96 sm:pr-10 text-center" data-aos="fade-right">
                     <h1 className="text-[#0A3143] text-4xl font-bold pb-6">Sobre mi</h1>
