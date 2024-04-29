@@ -4,12 +4,9 @@ import proyecto1 from '../assets/proyectos/proyecto1.png'
 import proyecto2 from '../assets/proyectos/proyecto2.png'
 import proyecto3 from '../assets/proyectos/proyecto3.png'
 import { useState } from 'react'
-import { atRule } from 'postcss'
 
 
-function Presentacion({ datos, estado, onClose }) {
-    const [estadoAc, setEstadoAc] = useState(estado);
-
+function Presentacion({ datos, onClose }) {
 
     return datos ?
         <div
@@ -20,21 +17,23 @@ function Presentacion({ datos, estado, onClose }) {
                     x
                 </button>
             </header>
-            <div className="">
-                <h2 className="text-4xl font-black text-[#085072] m-6">
-                    {datos.titulo}
-                </h2>
-                <div className="w-11/12 m-auto mt-3 mb-3">
-                    <img className='max-w-screen-lg	m-auto' src={datos.img} alt="" />
-                </div>
-                <div className="w-11/12 block m-auto mt-5 mb-5">
-                    <h4 className="text-lg text-start font-bold text-[#085072] mt-1">Caracteristicas</h4 >
-                    <p>
-                        {datos.descripcion}
-                    </p>
-                    <span>
-                        {datos.ano}
-                    </span>
+            <div className='h-[90%] min-h-[1050px] flex items-center'>
+                <div className="">
+                    <h2 className="text-2xl md:text-4xl font-black text-[#085072] m-6">
+                        {datos.titulo}
+                    </h2>
+                    <div className="w-11/12 m-auto mt-3 mb-3">
+                        <img className='max-w-screen-lg	m-auto w-full min-h-[200px] object-cover max-h-[850px] object-top	' src={datos.img} alt="" />
+                    </div>
+                    <div className="w-11/12 block m-auto mt-5 mb-5">
+                        <h4 className="text-lg text-start font-bold text-[#085072] mt-1">Caracteristicas</h4 >
+                        <p>
+                            {datos.descripcion}
+                        </p>
+                        <span>
+                            {datos.ano}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,8 +44,6 @@ function Presentacion({ datos, estado, onClose }) {
 function CartaImg({ value }) {
     const [adentro, setAdentro] = useState(false);
 
-    console.log(adentro)
-
     return (<>
         <div
             onMouseEnter={(e) => {
@@ -55,13 +52,13 @@ function CartaImg({ value }) {
             }} onMouseLeave={() => setAdentro(false)} className={`h-full w-full flex items-center justify-center `}
         >
             <img
-            className={` ${adentro ? 'hov' : ''}`}
+                className={` ${adentro ? 'hov' : ''}`}
                 src={value.img} alt="" />
             <div
-                className={'description absolute max-w-xs text-center z-30  font-bold ' + (adentro ? 'opacity-1' : 'opacity-0')}
+                className={'description absolute max-w-xs text-center w-[90%] z-30  font-bold ' + (adentro ? 'opacity-1' : 'opacity-0')}
             >
-                <h2 className="text-2xl text-[#0A3143]">{value.titulo}</h2>
-                <span className="text-[#276E90]">{value.tipo}</span>
+                <h2 className="text-[18px] sm:text-[28px] md:text-2xl text-[#0A3143]">{value.titulo}</h2>
+                <span className="text-[17px] sm:text-[20px] text-[#276E90]">{value.tipo}</span>
                 <p className="text-base text-slate-700 mt-2">
                     {value.descripcioncorta}
                 </p>
@@ -73,14 +70,17 @@ function CartaImg({ value }) {
 
 
 function Tartejas({ proyectos }) {
-    const [estadoPresentacion, setEstadoPresentacion] = useState(false)
     const [showPresentacion, setShowPresentacion] = useState(null)
+    const body = document.body;
     function seleccionado(index, datos) {
         setShowPresentacion(datos)
+        console.log(body)
+        body.style.overflow = 'hidden';
     }
 
 
     function handleClose() {
+        body.style.overflow = 'auto';
         setShowPresentacion(null)
 
     }
@@ -98,8 +98,6 @@ function Tartejas({ proyectos }) {
 
         }
         {
-            // estadoPresentacion ? <Presentacion datos={showPresentacion} estado={estadoPresentacion} /> :''
-
             <Presentacion datos={showPresentacion} onClose={handleClose} />
         }
 
@@ -150,13 +148,13 @@ export default function Portafolio() {
 
 
     return <div
-        className="flex items-center pt-[130px] px-5 sm:px-8 m:pt-0  pt-8 min-h-[90vh] gap-12 justify-between lg:container m-auto"
+        className="flex items-center pt-[130px] px-5 sm:px-8 m:pt-0  pt-8 min-h-[900px] gap-12 justify-between lg:container m-auto"
         id="proyecto"
     >
-        <div id="portafolio" className="flex w-full px-4 sm:px-14 flex-col min-h-screen">
+        <div id="portafolio" className="flex w-full px-09 sm:px-14 flex-col min-h-screen">
             <div className="mb-12">
-                <h1 className="text-4xl font-black text-[#085072]">Portafolio</h1>
-                <span className="text-lg font-bold text-[#085072c4] mt-1">Algunos de mis proyectos web</span>
+                <h1 className="text-[22px] sm:text-[28px] md:text-4xl font-black text-[#085072]">Portafolio</h1>
+                <span className="text-m sm:text-lg font-bold text-[#085072c4] mt-1">Algunos de mis proyectos web</span>
                 <p>
                     Estos son algunos de mis proyectos web desde que inicie en el mundo de la
                     programacion desde el 2021

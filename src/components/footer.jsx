@@ -22,7 +22,7 @@ let social2 = [
     return <footer
     className="border-t-2 pt-8 flex-wrap sm:flex-nowrap pb-8 flex justify-center gap-5"
   >
-    <h3>©2023 Laura Alison Choque Copajira</h3>
+    <h3 className='text-center'>©2023 Laura Alison Choque Copajira</h3>
     <ul className="flex gap-4">
       <li className="w-8">
         <a href="https://www.linkedin.com/in/laura-alison/" target="_blank">

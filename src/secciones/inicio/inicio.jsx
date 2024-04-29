@@ -9,12 +9,12 @@ import code from '../../assets/coding.png';
 
 function Banner({imagen,tecnologías,texto}) {
   let separateTexto = texto.split(',');
-  return <div className="w-96 flex gap-5">
-    <div className="w-20">
-      <img src={imagen} alt="" />
+  return <div className="w-96 flex gap-3 md:gap-5 flex-col md:flex-row">
+    <div className="w-16 md:w-20">
+      <img className='max-w-[45px] md:max-w-full' src={imagen} alt="" />
     </div>
-    <div className="w-full text-center">
-      <div className="bg-[#CECFC9] p-4 rounded-t-lg">
+    <div className="max-w-[320px] banner w-full text-center m-auto">
+      <div className="bg-[#CECFC9] p-2 sm:p-4 rounded-t-lg">
         <h2 className="text-[#276E90] font-bold">{separateTexto[0]}</h2>
         <span className="text-[#276E90] font-bold">{separateTexto[1]}</span>
       </div>
@@ -57,12 +57,12 @@ let socialLinks = social.map(function (data) {
 export default function Inicio() {
   return (<>
     <div
-      className="flex items-center pt-[130px] px-5 sm:px-8 lg:pt-0  pt-8 min-h-[100vh] gap-10 justify-between lg:container m-auto"
+      className="flex items-center pt-[100px] sm:pt-[130px] px-5 sm:px-8 lg:pt-0  pt-8 min-h-[800px] gap-0  md:gap-10 justify-between lg:container m-auto"
       id="inicio"
     >
       <section data-aos="fade-right" className="content w-full lg:w-2/4">
         <div className="presentation">
-          <h1 className="name tracking-wider lg:text-[5rem] text-[30px] sm:mb-6 mb-2 w-max font-black relative z-40">
+          <h1 className="name tracking-wider lg:text-[4rem] md:text-[2.5rem] text-[30px] sm:mb-6 mb-2 w-max font-black relative z-40">
             Laura Alison <br />
             Choque Copajira
           </h1>
@@ -73,15 +73,15 @@ export default function Inicio() {
             de mis proyectos en los que he trabajado. ¡Gracias por visitar!
           </p>
         </div>
-        <ul className="flex gap-4">
+        <ul className="flex gap-3 md:gap-4">
           {socialLinks}
         </ul>
-        <div className="mt-14 flex gap-4">
-          <ButtonLink text="Sobre mi" ruta="#SobreMi" />
-          <ButtonLink text="Portafolio" ruta="#Portafolio" />
+        <div className="mt-5 md:mt-14 flex gap-2 md:gap-4">
+          <ButtonLink text="Sobre mi" ruta="#sobremi" />
+          <ButtonLink text="Portafolio" ruta="#portafolio" />
         </div>
       </section>
-      <section data-aos="fade-left" className="imgbox cover w-full lg:w-[520px] mt-12">
+      <section data-aos="fade-left" className="imgbox cover w-full lg:w-[520px] mt-12 min-w-[200px]">
         <img className=" portada" src={portada} alt="" />
       </section>
     </div>

@@ -3,9 +3,10 @@
 .menu li,
 .menu2 li,
 .menu3 li {
-  @apply absolute w-[70px] list-none origin-[155px] sm:origin-[180px] left-[10px] sm:left-0 transition duration-700;
+  @apply absolute w-[50px] sm:w-[70px] list-none origin-[135px] sm:origin-[180px] left-[30px] sm:left-0 transition duration-700 ;
   transition-delay: calc(0.1s * var(--i));
-  transform: rotate(0deg) translateX(150px);
+  transform: rotate(0deg) translateX(130px);
+
 }
 
 .menu .toggle:hover,
@@ -34,4 +35,22 @@
 .icono3.active .toggle {
   transform: rotate(315deg);
   transition: transform 1.25s;
+}
+
+@media (min-width: 640px) {
+  
+.menu li,
+.menu2 li,
+.menu3 li {
+  transform: rotate(0deg) translateX(150px);
+
+}
+  
+}
+
+@media (max-width: 350px) {
+  .menu li, .menu2 li, .menu3 li{
+    left: -20px;
+    transform: rotate(0deg) translateX(100px);
+  }
 }

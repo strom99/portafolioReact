@@ -1,6 +1,6 @@
 import './sobre_mi.css'
 import foto from '../../assets/foto.png';
-import curriculum from '../../assets/pdf/cv_alison_dev.pdf';
+import curriculum from '../../assets/pdf/cv_alisson_dev.pdf';
 import documental from '../../assets/documental.png'
 import cine from '../../assets/cine.png'
 import microfono from '../../assets/microfono.png'
@@ -11,7 +11,7 @@ import apoyar from '../../assets/apoyar.png'
 function Listado({ titulo, lista }) {
     return (
         <div >
-            <h2 className="text-[#276E90] font-bold text-[20px]">{titulo}</h2>
+            <h2 className="text-[#276E90] font-bold text-m sm:text-xl">{titulo}</h2>
             <ul className="flex gap-2 flex-col mt-6">
                 {
                     lista.map((item, index) => {
@@ -63,18 +63,18 @@ export default function Sobremi() {
 
     return <>
         <div className="px-4 py-4 sm:px-16 sm:py-16 sm:pt-[130px] pt-[130px]" id="sobremi">
-            <section className="about-me flex w-full gap-14 justify-center">
-                <div className="w-96 sm:pr-10 text-center" data-aos="fade-right">
-                    <h1 className="text-[#0A3143] text-4xl font-bold pb-6">Sobre mi</h1>
-                    <div className="w-[300px] sm:w-[350px]">
+            <section className="about-me flex w-full gap-5 lg:gap-14 justify-center flex-col md:flex-row items-center md:items-start">
+                <div className="w-full sm:w-80 md:w-96 sm:pr-10 text-center" data-aos="fade-right">
+                    <h1 className="text-[#0A3143] text-[22px] sm:text-[28px] md:text-4xl font-bold pb-6">Sobre mi</h1>
+                    <div className="min-w-[200px] max-w-[350px] m-auto">
                         <img src={foto} alt="" />
                     </div>
                 </div>
-                <div className="flex justify-start flex-col items-end max-w-2xl">
+                <div className="grid justify-items-end	 grid-flow-row items-end max-w-2xl">
                     <a
                         href={curriculum}
                         target="_blank"
-                        className="btn-general w-min mb-6"
+                        className="btn-general w-min mt-3 md:mb-6 order-[3] md:order-none"
                     >Curriculum</a>
                     <p className="mb-3">
                         Hola soy Laura Alison Choque Copajira, resido en Terrassa - Barcelona ,

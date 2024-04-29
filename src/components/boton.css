@@ -1,3 +1,4 @@
 .btn-general{
-    @apply px-5 py-2 bg-[#085072] rounded-lg text-white font-bold hover:brightness-150 transition-all
+    @apply px-3 md:px-5 py-2 bg-[#085072] rounded-lg text-white font-bold hover:brightness-150 transition-all  text-center text-[16px] md:text-[18px];
   }
+

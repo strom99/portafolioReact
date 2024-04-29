@@ -2,8 +2,12 @@
     mask-image: linear-gradient(white 98%,transparent);
 }
 
+.banner h2,.banner span{
+  @apply text-[14px] sm:text-[16px]
+}
+
 .name{
-  @apply lg:leading-[85px] leading-[35px] md:leading-[50px];
+  @apply lg:leading-[75px] leading-[35px] md:leading-[50px];
   font-family: "DM Serif Text", serif;
   color: #001125;
   filter: drop-shadow(2px 4px 6px #264e79ad);

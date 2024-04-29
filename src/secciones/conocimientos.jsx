@@ -38,14 +38,14 @@ function Esferas({name, imagenes }) {
 
     return (
         <div
-            className="menu cursor-pointer relative w-[350px] h-[350px] flex justify-center items-center "
+            className="menu cursor-pointer relative w-[350px] h-[350px] flex justify-center items-center min-w-[220px]"
         >
             <div
                 onClick={handleClick}
-                className="toggle w-[130px] h-[130px] bg-white flex flex-col justify-center items-center z-10 rounded-full shadow-md shadow-slate-500"
+                className="toggle w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] bg-white flex flex-col justify-center items-center z-10 rounded-full shadow-md shadow-slate-500"
             >
                 <div className={`w-10 icono ${abierto ? 'active' : ''}`}>
-                    <img className='w-[50px] h-[40px] object-contain tran' src={abierto ? mas : menos} alt="" />
+                    <img className='w-[30px] m-auto sm:w-[50px] h-[40px] object-contain tran' src={abierto ? mas : menos} alt="" />
                 </div>
                 <h3 className="">{name}</h3>
             </div>
@@ -72,8 +72,8 @@ export default function Conocimientos() {
         >
             <div className="flex w-full px-2 md:px-14 flex-col py-6" id="">
                 <div className="mb-10">
-                    <h1 className="text-4xl font-black text-[#0A3143]">Conocimientos</h1>
-                    <span className="text-lg font-bold text-[#085072c4] mt-1">Mis habilidades en...</span
+                    <h1 className="text-[22px] sm:text-[28px] md:text-4xl font-black text-[#0A3143]">Conocimientos</h1>
+                    <span className="text-m sm:text-xl font-bold text-[#085072c4] mt-1">Mis habilidades en...</span
                     >
                 </div>
                 <div className="flex justify-evenly mt-5 mb-16 flex-wrap">
