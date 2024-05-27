@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function Navegador(e) {
     return (
-        <nav className={`navegador md:border-0  border-l-2 border-b-2 border-[#dddddd] transition-all duration-75 flex gap-6 bg-white z-10 p-5 flex-col text-end top-[53px] absolute md:relative md:flex-row md:text-center md:right-0 md:top-0 ${e.inter ? 'right-[-20px]' : 'right-[-200px]'}`}>
+        <nav className={`navegador min-w-64 md:border-0  border-l-2 border-b-2 border-[#dddddd] transition-all duration-75 flex gap-6 bg-white z-10 p-5 flex-col text-end top-[53px] absolute md:relative md:flex-row md:text-center md:right-0 md:top-0 ${e.inter ? 'right-[-20px]' : 'right-[-276px] h-400px'}`}>
             <a href="#inicio">Inicio</a>
             <a href="#sobremi">Sobre Mi</a>
             <a href="#conocimientos">Conociminetos</a>

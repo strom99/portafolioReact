@@ -38,7 +38,7 @@ function Esferas({name, imagenes }) {
 
     return (
         <div
-            className="menu cursor-pointer relative w-[350px] h-[350px] flex justify-center items-center min-w-[220px]"
+            className="menu cursor-pointer relative w-[350px] sm:h-[350px] h-[300px] flex justify-center items-center min-w-[220px]"
         >
             <div
                 onClick={handleClick}
