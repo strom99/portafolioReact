@@ -8,6 +8,12 @@ import { useState } from 'react'
 
 function Presentacion({ datos, onClose }) {
 
+    function enlaceWeb(web){
+        return (
+            <a href={web} className='btn-general absolute top-[8%] right-[10%]'>Visitar Web</a>
+        )
+    }
+
     return datos ?
         <div
             className="fixed bg-slate-100 w-full h-full z-[200] top-0 text-center overflow-auto right-0"
@@ -17,8 +23,11 @@ function Presentacion({ datos, onClose }) {
                     x
                 </button>
             </header>
-            <div className='h-[90%] min-h-[1050px] flex items-center'>
+            <div className='h-[90%] min-h-[1050px] flex items-center relative'>
+            { datos.web != '' ? enlaceWeb(datos.web): ''}
+
                 <div className="">
+
                     <h2 className="text-2xl md:text-4xl font-black text-[#085072] m-6">
                         {datos.titulo}
                     </h2>
@@ -74,7 +83,6 @@ function Tartejas({ proyectos }) {
     const body = document.body;
     function seleccionado(index, datos) {
         setShowPresentacion(datos)
-        console.log(body)
         body.style.overflow = 'hidden';
     }
 
@@ -109,6 +117,7 @@ export default function Portafolio() {
     const proyectos = [
         {
             titulo: 'Mensajes Random',
+            web: 'https://random-sigma-nine.vercel.app/',
             tipo: 'Proyecto personal',
             img: proyecto5,
             descripcioncorta: 'Carga de mensajes random de una Api',
@@ -118,6 +127,7 @@ export default function Portafolio() {
         },
         {
             titulo: 'George Prada',
+            web: '',
             tipo: 'Stucom proyecto',
             img: proyecto1,
             descripcioncorta: 'Pagina para comprar productos online de gimnasio',
@@ -127,6 +137,7 @@ export default function Portafolio() {
         },
         {
             titulo: 'MyBalance',
+            web: '',
             tipo: 'Proyecto personal',
             img: proyecto3,
             descripcioncorta:
@@ -137,6 +148,7 @@ export default function Portafolio() {
         },
         {
             titulo: 'Ouden',
+            web: '',
             tipo: 'Stucom proyecto',
             img: proyecto2,
             descripcioncorta: 'Página para vender y buscar casas y planos en venta',
