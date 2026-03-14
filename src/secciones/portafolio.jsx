@@ -3,6 +3,7 @@ import proyecto5 from '../assets/proyectos/proyecto5.png'
 import proyecto1 from '../assets/proyectos/proyecto1.png'
 import proyecto2 from '../assets/proyectos/proyecto2.png'
 import proyecto3 from '../assets/proyectos/proyecto3.png'
+import proyecto6 from '../assets/proyectos/proyecto6.png'
 import { useState } from 'react'
 
 
@@ -124,6 +125,16 @@ export default function Portafolio() {
             descripcion:
                 'Este proyecto fue una iniciativa personal en la que decidí conectarme a una API externa para obtener mensajes aleatorios y mostrarlos en mi sitio web. Para lograr esto, utilicé JavaScript para hacer una solicitud a la API y obtener los datos necesarios. Luego, utilicé HTML y CSS para crear una interfaz de usuario atractiva para mostrar los mensajes.',
             ano: '2021',
+        },
+        {
+            titulo: 'Img renom',
+            web: 'https://img-renom-gu03bcnkm-alissstorms-projects.vercel.app/',
+            tipo: 'Herramienta trabajo',
+            img: proyecto6,
+            descripcioncorta: 'Renombrado de imagenes, en orden asignado',
+            descripcion:
+                'Es una herramienta que usaba en mi trabajo, por que siempre me daban un monton de imagenes para una pagina en zip, pero las tenia que renombrar y ordenar segun la instruccion, fue una tarea muy repetitiva que inicie haciendolo con scrits en la consola, pero necesitaba elegir el orden de imagenes, y ese control no lo tenias en la CMD',
+            ano: '2026',
         },
         {
             titulo: 'George Prada',
