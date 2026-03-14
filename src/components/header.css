@@ -1,12 +1,10 @@
 nav a{
     font-weight: 800;
-    transition: all .8s linear;
+    transition: all .2s linear;
 }
 
 nav a:hover{
-    filter: drop-shadow(0 3px 4px rgba(141, 141, 141,1));
+    filter: drop-shadow(0 5px 4px #085072b3);
+    text-decoration:underline;
 }
 
-.navegador a:hover{
-    
-}

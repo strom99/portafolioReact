@@ -42,20 +42,18 @@ function Esferas({name, imagenes }) {
         >
             <div
                 onClick={handleClick}
-                className="toggle w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] bg-white flex flex-col justify-center items-center z-10 rounded-full shadow-md shadow-slate-500"
+                className="toggle w-[100px] h-[100px] sm:w-[130px] sm:h-[130px] bg-white flex flex-col justify-center items-center z-10 rounded-full shadow-md shadow-slate-500"
             >
                 <div className={`w-10 icono ${abierto ? 'active' : ''}`}>
-                    <img className='w-[30px] m-auto sm:w-[50px] h-[40px] object-contain tran' src={abierto ? mas : menos} alt="" />
+                    <img className='w-[30px] m-auto sm:w-[30px] h-[40px] object-contain tran' src={abierto ? menos : mas} alt="" />
                 </div>
                 <h3 className="">{name}</h3>
             </div>
             <ul className='flex items-center'>
                 {
                     imagenes.map((e, index) => {
-                        return <li key={index} style={{ "--i": index }}>
-                            <a href="">
+                        return <li className='animacion' key={index} style={{ "--i": index }}>
                                 <img src={e} alt="" />
-                            </a>
                         </li>
                     })
                 }

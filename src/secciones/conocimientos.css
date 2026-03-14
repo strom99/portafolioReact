@@ -3,7 +3,7 @@
 .menu li,
 .menu2 li,
 .menu3 li {
-  @apply absolute w-[50px] sm:w-[70px] list-none origin-[135px] sm:origin-[180px] left-[30px] sm:left-0 transition duration-700 ;
+  @apply absolute w-[50px] sm:w-[70px] list-none origin-[140px] sm:origin-[180px] left-[30px] sm:left-0 transition duration-700 ;
   transition-delay: calc(0.1s * var(--i));
   transform: rotate(0deg) translateX(130px);
 
@@ -23,9 +23,9 @@
   transform: rotate(calc(360deg / 5 * var(--i))) !important;
 }
 
-.menu li a,
-.menu2 li a,
-.menu3 li a {
+.menu li img,
+.menu2 li img,
+.menu3 li img {
   display: flex;
   transform: rotate(calc(360deg / -5 * var(--i)));
 }

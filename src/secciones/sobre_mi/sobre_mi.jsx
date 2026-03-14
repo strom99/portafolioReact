@@ -1,6 +1,6 @@
 import './sobre_mi.css'
 import foto from '../../assets/foto.png';
-import curriculum from '../../assets/pdf/cv_alisson_dev.pdf';
+import curriculum from '../../assets/pdf/cv_alisson.pdf';
 import documental from '../../assets/documental.png'
 import cine from '../../assets/cine.png'
 import microfono from '../../assets/microfono.png'
