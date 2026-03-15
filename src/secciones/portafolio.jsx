@@ -40,9 +40,9 @@ function Presentacion({ datos, onClose }) {
                         <p>
                             {datos.descripcion}
                         </p>
-                        <span>
+                        <strong>
                             {datos.ano}
-                        </span>
+                        </strong>
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@ export default function Portafolio() {
         },
         {
             titulo: 'Img renom',
-            web: 'https://img-renom-gu03bcnkm-alissstorms-projects.vercel.app/',
+            web: 'https://img-renom-2i0bfieur-alissstorms-projects.vercel.app/',
             tipo: 'Herramienta trabajo',
             img: proyecto6,
             descripcioncorta: 'Renombrado de imagenes, en orden asignado',
